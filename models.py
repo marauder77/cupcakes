@@ -13,7 +13,7 @@ class Cupcake(db.Model):
 
     __tablename__ = "cupcakes"
 
-    id = db.Column(db.Integer, primary_key=True autoincrement=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     flavor = db.Column(db.Text, nullable = False)
     size = db.Column(db.Text, nullable = False)
     rating = db.Column(db.Float, nullable = False)
@@ -29,6 +29,6 @@ class Cupcake(db.Model):
             "image": self.image,
         }
 
-    def connect_db(app):
-        db.app = app
-        db.init_app(app)
+def connect_db(app):
+    db.app = app
+    db.init_app(app)
